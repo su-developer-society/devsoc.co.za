@@ -22,7 +22,7 @@ particlesJS('particles-js', {
             random: true,
             anim: {
                 enable: true,
-                speed: 0.8,
+                speed: 1.0,
                 opacity_min: 0.1,
                 sync: false
             }
@@ -32,7 +32,7 @@ particlesJS('particles-js', {
             random: true,
             anim: {
                 enable: true,
-                speed: 2,
+                speed: 2.3,
                 size_min: 0.1,
                 sync: false
             }
@@ -53,7 +53,7 @@ particlesJS('particles-js', {
             out_mode: 'out',
             bounce: false,
             attract: {
-                enable: true,
+                enable: false,
                 rotateX: 600,
                 rotateY: 1200
             }
@@ -182,7 +182,7 @@ window.addEventListener('mousemove', (e) => {
 	const x = e.clientX / window.innerWidth;
 	const y = e.clientY / window.innerHeight;
 	document.querySelectorAll('.orb').forEach((orb, index) => {
-		const speed = (index + 1) * 16;
+		const speed = (index + 1) * 30;
 		const xOffset = (x - 0.5) * speed;
 		const yOffset = (y - 0.5) * speed;
 		orb.style.transform = `translate(${xOffset}px, ${yOffset}px)`;

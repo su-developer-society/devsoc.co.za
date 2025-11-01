@@ -33,7 +33,7 @@ html {
 
 body {
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    background: var(--dark);
     color: #fff;
     min-height: 100vh;
     overflow-x: hidden;
