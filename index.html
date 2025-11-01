@@ -1,1 +1,54 @@
-Coming Soon
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevSoc - Developer Society of South Africa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#0a0a0a">
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <!-- Animated gradient orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    
+    <main class="container" role="main">
+        <header class="hero">
+            <h1 class="glitch" data-text="Welcome To">Welcome To</h1>
+            <h2 class="main-title">
+                <span class="word">Developer Society of South Africa</span>
+            </h2>
+            <div class="subtitle">
+                <span class="typed-text">Connecting tech communities across the nation</span>
+                <span class="cursor">|</span>
+            </div>
+        </header>
+        <section class="university-section">
+            <h3 class="section-title">
+                <span class="title-word">Find Your University</span>
+            </h3>
+            <div class="university-grid" id="university-grid"><!-- Cards injected by script.js --></div>
+        </section>
+        <footer class="site-footer" role="contentinfo">
+            <a
+                class="btn-apply"
+                href="https://cdn.devsoc.co.za/Application_For_DevSoc_Subdomain_Allocation.pdf"
+                target="_blank"
+                rel="noopener"
+                aria-label="Apply for a free devsoc.co.za subdomain (opens PDF in a new tab)"
+            >
+                Apply for a devsoc.co.za subdomain for free
+            </a>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
