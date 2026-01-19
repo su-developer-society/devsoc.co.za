@@ -5,11 +5,11 @@
 }
 
 :root {
-    --primary: #667eea;
-    --secondary: #764ba2;
-    --accent: #00d4ff;
+    --primary: #9333ea;
+    --secondary: #7c3aed;
+    --accent: #a855f7;
     --purple: #7c3aed;
-    --dark: #0a0a0a;
+    --dark: #000000;
 
     /* UI spacing and sizing overrides (moved from HTML/JS) */
     --space-1: .25rem;
@@ -22,7 +22,7 @@
     --space-10: 2.5rem;
     --space-12: 3rem;
     --space-16: 4rem;
-    --radius-xl: 24px;
+    --radius-xl: 0px;
     --maxw: 1200px;
 }
 
@@ -41,50 +41,25 @@ body {
 }
 
 #particles-js {
+    display: none;
+}
+
+/* Grid background */
+.grid-bg {
     position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     z-index: 0;
+    background-image: 
+        linear-gradient(rgba(147, 51, 234, 0.25) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(147, 51, 234, 0.25) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center center;
 }
 
-/* Animated gradient orbs */
-.orb {
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.3;
-    z-index: 0;
-    animation: float 20s ease-in-out infinite;
-}
-
-.orb-1 {
-		width: 420px;
-		height: 420px;
-		background: radial-gradient(circle, var(--primary), transparent);
-		top: -210px;
-		right: -210px;
-		animation-delay: 0s;
-}
-
-.orb-2 {
-		width: 340px;
-		height: 340px;
-		background: radial-gradient(circle, var(--purple), transparent);
-		bottom: -170px;
-		left: -170px;
-		animation-delay: 7s;
-}
-
-.orb-3 {
-		width: 380px;
-		height: 380px;
-		background: radial-gradient(circle, var(--accent), transparent);
-		top: 50%;
-		left: 50%;
-		animation-delay: 14s;
-}
+/* Animated gradient orbs - removed */
 
 .container {
     position: relative;
@@ -134,7 +109,6 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin: 0 0.4rem;
-    text-shadow: 0 0 80px rgba(102, 126, 234, 0.5);
 }
 
 .word:nth-child(1) { animation-delay: 0.1s; }
@@ -201,7 +175,7 @@ body {
 .uni-card {
     position: relative;
     background: rgba(255, 255, 255, 0.03);
-    border-radius: 24px;
+    border-radius: 0;
     padding: 1rem 0.85rem;
     text-decoration: none;
     color: inherit;
@@ -221,7 +195,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.15), rgba(124, 58, 237, 0.15));
     opacity: 0;
     transition: opacity 0.6s;
 }
@@ -232,10 +206,8 @@ body {
 
 .uni-card:hover {
     transform: translateY(-15px) scale(1.02);
-    box-shadow: 0 30px 80px rgba(102, 126, 234, 0.5),
-                0 0 60px rgba(124, 58, 237, 0.4),
-                inset 0 0 40px rgba(102, 126, 234, 0.1);
-    border-color: rgba(102, 126, 234, 0.6);
+    box-shadow: none;
+    border-color: rgba(147, 51, 234, 0.6);
 }
 
 .card-inner {
@@ -276,21 +248,7 @@ body {
 }
 
 .card-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle, rgba(102, 126, 234, 0.8), transparent);
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.6s;
-    filter: blur(40px);
-}
-
-.uni-card:hover .card-glow {
-    opacity: 1;
-    animation: pulse 2s infinite;
+    display: none;
 }
 
 .card-shine {
@@ -334,12 +292,12 @@ body {
     justify-content: center;
     gap: .5rem;
     padding: 0.7rem 1.2rem;
-    border-radius: 9999px;
+    border-radius: 0;
     background: linear-gradient(135deg, var(--accent), var(--purple));
     color: #fff;
     -webkit-text-fill-color: #fff; /* ensure visible on WebKit */
     font-weight: 700;
-    box-shadow: 0 10px 24px rgba(102, 126, 234, 0.25);
+    box-shadow: none;
     transition: transform .2s ease, box-shadow .2s ease, filter .2s ease, background-position .3s ease;
     background-size: 150% 150%;
     background-position: 0% 50%;
@@ -348,18 +306,18 @@ body {
 }
 .btn-apply:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(102, 126, 234, 0.35);
+    box-shadow: none;
     background-position: 100% 50%;
     filter: brightness(1.05);
 }
 .btn-apply:active {
     transform: translateY(0);
-    box-shadow: 0 8px 18px rgba(102, 126, 234, 0.25);
+    box-shadow: none;
 }
 .btn-apply:focus-visible {
     outline: 3px solid var(--accent);
     outline-offset: 3px;
-    box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.25);
+    box-shadow: none;
 }
 
 @media (max-width: 1024px) {
