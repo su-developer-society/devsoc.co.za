@@ -440,6 +440,24 @@ body {
     box-shadow: none;
 }
 
+.open-source-note {
+    margin-top: var(--space-4);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.open-source-note a {
+    color: #cbd5ff;
+    text-decoration: underline;
+    text-decoration-color: rgba(255,255,255,0.5);
+}
+
+.open-source-note a:hover {
+    color: #ffffff;
+    text-decoration-color: #ffffff;
+}
+
 @media (max-width: 1024px) {
     .container { padding: var(--space-6) var(--space-4); }
     .hero { padding: var(--space-10) 0 var(--space-12); }
