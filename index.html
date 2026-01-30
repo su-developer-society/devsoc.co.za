@@ -29,6 +29,20 @@
             <h3 class="section-title">
                 <span class="title-word">Find Your University</span>
             </h3>
+            <div class="search-wrap" role="search">
+                <label class="sr-only" for="uni-search">Search universities</label>
+                <div class="search-inner">
+                    <input
+                        id="uni-search"
+                        type="search"
+                        name="q"
+                        placeholder="Search by name..."
+                        autocomplete="off"
+                        aria-label="Search universities by name"
+                    >
+                    <span class="search-hint">Type to filter instantly</span>
+                </div>
+            </div>
             <div class="university-grid" id="university-grid"><!-- Cards injected by script.js --></div>
         </section>
         <footer class="site-footer" role="contentinfo">

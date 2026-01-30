@@ -172,6 +172,60 @@ body {
     padding: 2rem 0;
 }
 
+.search-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+}
+
+.search-inner {
+    width: min(640px, 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.search-inner input[type="search"] {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border-radius: 0;
+    border: 1.5px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.04);
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    backdrop-filter: blur(12px);
+}
+
+.search-inner input[type="search"]::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.search-inner input[type="search"]:focus {
+    outline: none;
+    border-color: rgba(147, 51, 234, 0.7);
+    box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.2);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.search-hint {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.02em;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 .uni-card {
     position: relative;
     background: rgba(255, 255, 255, 0.03);
@@ -186,6 +240,49 @@ body {
     transform-style: preserve-3d;
     /* 4 per row: width = (100% - 3 gaps) / 4 */
     flex: 0 1 calc((100% - (3 * 1rem)) / 4);
+}
+
+.status-dot {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 0;
+    border: 1px solid rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.08);
+    box-shadow: 0 0 0 0.5px rgba(0,0,0,0.25);
+    transition: background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.status-dot[data-status="online"] {
+    background: #10b981;
+    border-color: rgba(16,185,129,0.75);
+    box-shadow:
+        0 0 0 0.5px rgba(0,0,0,0.25),
+        0 0 0 1px rgba(16,185,129,0.45),
+        0 0 12px rgba(16,185,129,0.6);
+    animation: statusPulse 1.6s ease-in-out infinite;
+}
+
+.status-dot[data-status="offline"] {
+    background: #ef4444;
+    border-color: rgba(239,68,68,0.75);
+    box-shadow: 0 0 12px rgba(239,68,68,0.45);
+}
+
+.status-dot[data-status="checking"] {
+    background: #9ca3af;
+    border-color: rgba(156,163,175,0.65);
+    box-shadow: 0 0 8px rgba(156,163,175,0.35);
+}
+
+@keyframes statusPulse {
+    0%   { box-shadow: 0 0 0 1px rgba(16,185,129,0.4), 0 0 10px rgba(16,185,129,0.55); }
+    50%  { box-shadow: 0 0 0 2px rgba(16,185,129,0.2), 0 0 14px rgba(16,185,129,0.75); }
+    100% { box-shadow: 0 0 0 1px rgba(16,185,129,0.4), 0 0 10px rgba(16,185,129,0.55); }
 }
 
 .uni-card::before {
@@ -214,7 +311,10 @@ body {
     position: relative;
     z-index: 1;
     text-align: center;
-    padding-top: .25rem;
+    padding-top: 1rem; /* space so status indicator never overlaps title */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .card-number {
@@ -238,6 +338,26 @@ body {
     font-weight: 700;
     margin-bottom: var(--space-2);
     line-height: 1.2;
+}
+
+.location-tag {
+    position: relative;
+    margin-top: 0.25rem;
+    transform: translateY(6px);
+    padding: 0;
+    font-size: 0.82rem;
+    color: rgba(200, 205, 215, 0.9);
+    letter-spacing: 0.02em;
+    opacity: 0;
+    transition: opacity 0.22s ease, transform 0.22s ease;
+    pointer-events: none;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.45);
+}
+
+.uni-card:hover .location-tag,
+.uni-card:focus-within .location-tag {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .uni-card p {
@@ -324,6 +444,7 @@ body {
     .container { padding: var(--space-6) var(--space-4); }
     .hero { padding: var(--space-10) 0 var(--space-12); }
     .university-section { margin-top: var(--space-12); }
+    .search-wrap { padding: 0 var(--space-2); }
     /* 2 per row on tablets */
     .uni-card { flex-basis: calc((100% - 1rem) / 2); }
 }
@@ -336,6 +457,7 @@ body {
     .uni-card { padding: var(--space-6) var(--space-5); }
     /* 1 per row on mobile */
     .uni-card { flex-basis: 100%; }
+    .search-inner input[type="search"] { padding: 0.85rem 0.9rem; }
     .orb { display: none; }
     .site-footer {
         margin-top: var(--space-10);
