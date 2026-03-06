@@ -1,10 +1,10 @@
 // University cards config (add/edit items here to change boxes and links)
 const universities = [
 	{ name: 'Stellenbosch University', slug: 'stellenbosch', href: 'su.devsoc.co.za', location: 'Stellenbosch, Western Cape' },
+	{ name: 'Rhodes University', slug: 'rhodes', href: 'ru.devsoc.co.za', location: 'Makhanda, Eastern Cape' },
 	{ name: 'University of Cape Town', slug: 'uct', href: 'https://www.instagram.com/uctdevelopersoc/?hl=en', location: 'Cape Town, Western Cape' },
 	{ name: 'University of KwaZulu-Natal', slug: 'ukzn', href: 'https://linktr.ee/techsocietyukzn', location: 'Durban, KwaZulu-Natal' },
 	{ name: 'University of Limpopo', slug: 'ul', href: 'https://linktr.ee/uldevsociety', location: 'Polokwane, Limpopo' },
-	{ name: 'Rhodes University', slug: 'rhodes', href: 'https://www.instagram.com/rhodesdevsoc/?hl=en', location: 'Makhanda, Eastern Cape' },
 	{ name: 'University of the Western Cape', slug: 'uwc', href: 'https://www.instagram.com/uwc_itsociety/', location: 'Cape Town, Western Cape' },
 	{ name: 'University of the Witwatersrand', slug: 'wits', href: 'https://wits-dev-soc.web.app/', location: 'Johannesburg, Gauteng' },
 	{ name: 'University of Johannesburg', slug: 'uj', href: 'https://linktr.ee/ujdevsoc?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnc56EzCbUe45ziE9I5zoh7xyiIpi3miMolXBLm7pr4DFDbbF-igSOFZ6LjNI_aem_JbGvL4c79UoMfm8ulYxe9w', location: 'Johannesburg, Gauteng' },
